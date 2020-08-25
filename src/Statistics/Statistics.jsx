@@ -1,21 +1,15 @@
 import React from "react";
-import * as S from "./style";
 import PropTypes from "prop-types";
 
-export const Statistics = ({ title, stats }) => {
-  const getRandomColor = () => {
-    const letters = "0123456789ABCDEF";
-    let color = "#";
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  };
+import { getRandomColor } from "../utils";
 
-  const items = stats.map((stat) => (
-    <S.Item key={stat.id} background={getRandomColor()}>
-      <S.Label>{stat.label}</S.Label>
-      <S.Percentage>{stat.percentage}</S.Percentage>
+import * as S from "./style";
+
+export const Statistics = ({ title, stats }) => {
+  const items = stats.map(({ id, label, percentage }) => (
+    <S.Item key={id} background={getRandomColor()}>
+      <S.Label>{label}</S.Label>
+      <S.Percentage>{percentage}</S.Percentage>
     </S.Item>
   ));
 

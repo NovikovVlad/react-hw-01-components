@@ -37,7 +37,7 @@ export const Item = styled.li`
   width: 67px;
   height: 60px;
   align-items: center;
-  background: ${(props) => props.background};
+  background: ${({ background }) => background};
 `;
 
 export const Label = styled.span`
