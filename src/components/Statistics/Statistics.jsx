@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { getRandomColor } from "../utils";
+import { getRandomColor } from "../../utils";
 
 import * as S from "./style";
 
@@ -29,7 +29,7 @@ Statistics.propTypes = {
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
     })
-  ),
+  ).isRequired,
 };
 
 Statistics.defaultProps = {
